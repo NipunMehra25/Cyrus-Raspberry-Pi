@@ -1,0 +1,200 @@
+═══════════════════════════════════════════════════════════
+FILE 1: requirements-windows.txt
+═══════════════════════════════════════════════════════════
+Copy everything below this line into a file named "requirements-windows.txt"
+-------------------------------------------------------------------
+
+SpeechRecognition==3.10.0
+gTTS==2.4.0
+playsound==1.3.0
+langdetect==1.0.9
+google-generativeai==0.3.0
+
+# Note: PyAudio must be installed separately on Windows
+# Run these commands in Command Prompt:
+# pip install pipwin
+# pipwin install pyaudio
+
+-------------------------------------------------------------------
+
+
+═══════════════════════════════════════════════════════════
+FILE 2: requirements-pi.txt  
+═══════════════════════════════════════════════════════════
+Copy everything below this line into a file named "requirements-pi.txt"
+-------------------------------------------------------------------
+
+SpeechRecognition==3.10.0
+gTTS==2.4.0
+playsound==1.3.0
+langdetect==1.0.9
+google-generativeai==0.3.0
+PyAudio==0.2.13
+
+# Note: Install system dependencies FIRST before running this:
+# sudo apt-get install -y portaudio19-dev mpg123 alsa-utils
+# Then run: pip3 install -r requirements-pi.txt
+
+-------------------------------------------------------------------
+
+
+═══════════════════════════════════════════════════════════
+FILE 3: requirements.txt (Universal - Use This if Unsure)
+═══════════════════════════════════════════════════════════
+Copy everything below this line into a file named "requirements.txt"
+-------------------------------------------------------------------
+
+SpeechRecognition==3.10.0
+gTTS==2.4.0
+playsound==1.3.0
+langdetect==1.0.9
+google-generativeai==0.3.0
+
+-------------------------------------------------------------------
+
+
+═══════════════════════════════════════════════════════════
+INSTALLATION INSTRUCTIONS
+═══════════════════════════════════════════════════════════
+
+🪟 FOR WINDOWS:
+--------------
+1. Open Command Prompt (cmd)
+2. Navigate to your project folder:
+   cd C:\path\to\cyrus-voice-assistant
+
+3. Install PyAudio first:
+   pip install pipwin
+   pipwin install pyaudio
+
+4. Install other requirements:
+   pip install -r requirements-windows.txt
+
+   OR if you're using requirements.txt:
+   pip install -r requirements.txt
+
+
+🥧 FOR RASPBERRY PI:
+-------------------
+1. Open Terminal
+2. Navigate to your project folder:
+   cd ~/cyrus-voice-assistant
+
+3. Install system dependencies:
+   sudo apt-get update
+   sudo apt-get install -y python3-pip portaudio19-dev mpg123 alsa-utils
+
+4. Install Python packages:
+   pip3 install -r requirements-pi.txt
+
+   OR if you're using requirements.txt:
+   pip3 install pyaudio
+   pip3 install -r requirements.txt
+
+
+═══════════════════════════════════════════════════════════
+WHAT EACH PACKAGE DOES
+═══════════════════════════════════════════════════════════
+
+📦 SpeechRecognition (3.10.0)
+   - Converts your voice into text
+   - Listens to your microphone
+   - Recognizes words you speak
+
+📦 gTTS (2.4.0) 
+   - Google Text-to-Speech
+   - Converts Cyrus's responses into voice
+   - Supports multiple languages
+
+📦 playsound (1.3.0)
+   - Plays the audio files
+   - Makes sound come through speakers
+   - Works on both Windows and Raspberry Pi
+
+📦 langdetect (1.0.9)
+   - Detects which language you're speaking
+   - Identifies English, Hindi, or Punjabi
+   - Helps Cyrus respond in the right language
+
+📦 google-generativeai (0.3.0)
+   - Connects to Google Gemini API
+   - The "brain" of Cyrus
+   - Generates intelligent responses
+
+📦 PyAudio (0.2.13)
+   - Handles microphone input
+   - Low-level audio interface
+   - Required for SpeechRecognition to work
+
+
+═══════════════════════════════════════════════════════════
+TROUBLESHOOTING
+═══════════════════════════════════════════════════════════
+
+❌ Problem: "pip: command not found"
+✅ Solution: 
+   Windows: Reinstall Python and check "Add to PATH"
+   Raspberry Pi: Run "sudo apt-get install python3-pip"
+
+❌ Problem: "Could not find a version that satisfies the requirement"
+✅ Solution: Update pip first
+   Windows: python -m pip install --upgrade pip
+   Raspberry Pi: pip3 install --upgrade pip
+
+❌ Problem: PyAudio installation fails on Windows
+✅ Solution: Use pipwin instead
+   pip install pipwin
+   pipwin install pyaudio
+
+❌ Problem: PyAudio installation fails on Raspberry Pi
+✅ Solution: Install system libraries first
+   sudo apt-get install portaudio19-dev
+   pip3 install pyaudio
+
+❌ Problem: "Microsoft Visual C++ required" (Windows)
+✅ Solution: Use pipwin method (see above)
+
+❌ Problem: Installation is very slow on Raspberry Pi
+✅ Solution: This is normal, be patient (5-10 minutes)
+
+
+═══════════════════════════════════════════════════════════
+VERIFICATION - CHECK IF EVERYTHING INSTALLED
+═══════════════════════════════════════════════════════════
+
+Run this command to see all installed packages:
+
+Windows:    pip list
+Raspberry:  pip3 list
+
+You should see:
+✓ SpeechRecognition (3.10.0)
+✓ gTTS (2.4.0)
+✓ playsound (1.3.0)
+✓ langdetect (1.0.9)
+✓ google-generativeai (0.3.0)
+✓ PyAudio (0.2.13 or 0.2.14)
+
+
+═══════════════════════════════════════════════════════════
+NEED HELP?
+═══════════════════════════════════════════════════════════
+
+If you're still having issues:
+1. Make sure you have internet connection
+2. Check if Python is properly installed
+3. Try installing packages one by one
+4. Read error messages carefully
+5. Google the exact error message
+
+Example: Install packages individually
+   pip install SpeechRecognition
+   pip install gTTS
+   pip install playsound
+   pip install langdetect
+   pip install google-generativeai
+
+
+═══════════════════════════════════════════════════════════
+Created by Nipun Mehra
+═══════════════════════════════════════════════════════════
